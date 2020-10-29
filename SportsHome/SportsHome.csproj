@@ -147,6 +147,7 @@
     <Content Include="Content\SportsHome.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\img2_fute.png" />
     <Content Include="fonts\Logo.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

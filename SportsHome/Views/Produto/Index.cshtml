@@ -1,9 +1,42 @@
-﻿
-@{
-    @Styles.Render("~/Content/SportsHome.css")
-    ViewBag.Title = "Index";
-
+﻿@{
+    ViewBag.Title = "Home";
 }
+@Styles.Render("~/Content/SportsHome.css")
 
-
-
+<style>
+    :root {
+        --font-homeH1: bold 35pt Leelawadee UI;
+        --font-homeH2: bold 20pt Leelawadee UI;
+    }
+    main {
+        display: flex;
+    }
+    .img_home img{
+        margin-top: 4%;
+        margin-bottom: 1%;
+        margin-left: 25%;
+        width: 110%;
+        display: inline-block;
+    }
+    h1{
+        font: var(--font-homeH1);
+        color: #E1686C;
+        margin-left: 25%;
+        margin-top: 5%;
+    }
+    h2{
+       font: var(--font-homeH2);
+       margin-left: 25%;
+       margin-top: 8%;
+       width: 50%;
+    }
+</style>
+<main>
+    <div class="img_home">
+        <img src="~/fonts/img2_fute.png"/>
+    </div>
+    <div class="text_home">
+        <h1>20% DE DESCONTO</h1>
+        <h2>NOVA CAMISA DO LIVERPOOL É ANUNCIADA, E JÁ ESTÁ EM VENDA, AQUI NA <mark style="background: none; color: #FF1616">SPORTSHOME</mark>!</h2>
+    </div>
+</main>
