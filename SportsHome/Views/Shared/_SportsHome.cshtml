@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/SportsHome.css")
+</head>
+<body>
+    <header>
+        <ul>
+            @Html.ActionLink("Produtos", "Produtos", "Produto", new { @class = "link" })
+            <img src="~/fonts/Logo.png" style="width: 18%"/>
+            @Html.ActionLink("Novo Cadastro", "Cadastros", "Produto", new { @class = "link" })
+        </ul>
+    </header>
+    <div class="container body-content">
+        @RenderBody()
+        <hr/>
+        <footer>
+            <p>&copy;SportsHome - @DateTime.Now.Year</p>
+        </footer>
+    </div>
+</body>
+</html>
+

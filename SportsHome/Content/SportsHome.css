@@ -1,0 +1,33 @@
+﻿body {
+    margin:0;
+    background:#fff;
+}
+header {
+    display: flex;
+    margin: 0;
+    background-color: #E1E8ED;
+}
+ul{
+    display: flex;
+    margin-left:25%;
+}
+.link {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top:3%;
+    font: bold 12pt Leelawadee UI;
+    color: #161718;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.link:hover {
+    color: #e21d1d;
+    transition: ease 0.5s;
+}
+hr {
+    border: solid 5px #BEC2C4;
+}
+footer p{
+    font: bold 12pt Leelawadee UI;
+    text-align: center;
+}
