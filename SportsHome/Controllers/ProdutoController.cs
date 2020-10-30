@@ -13,10 +13,8 @@ namespace SportsHome.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Produtos()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
