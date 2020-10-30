@@ -3,7 +3,56 @@
     ViewBag.Title = "Produtos";
     Layout = "~/Views/Shared/_SportsHome.cshtml";
 }
+<style>
+    :root {
+        --font-homeH1: bold 35pt Leelawadee UI;
+        --font-homeH2: bold 20pt Leelawadee UI;
+    }
+   .back{
+       font: bold 9pt Leelawadee UI;
+       color: black
+   }
+    .content_fute img, .content_bas img, .content_nfl img, .content_bei img {
+        margin-left: 10%;
+        margin-bottom: 2%;
+        transition: ease 1s;
+        display: inline-block;
+        width:20%;
+        cursor: pointer;
+    }
+    h2{
+        margin-left: 3%;
+        font:var(--font-homeH2);
+    }
+</style>
 
-@Html.ActionLink("Voltar para Home", "Index", "Produto")
-<h2>Produtos</h2>
-
+@Html.ActionLink(" < Voltar para Home", "Index", "Produto", new{@class="back" })
+<main>
+    <h2>FUTEBOL</h2>
+    <div class="content_fute">
+        <img src="~/fonts/img1_fute.png" style="width: 20%;margin-bottom: 2.5%;">
+        <img src="~/fonts/img2_fute.png" style="width:20%">
+        <img src="~/fonts/img3_fute.png" style="width:20%">
+    </div>
+    <hr>
+    <h2>BASQUETE</h2>
+    <div class="content_bas">
+        <img src="~/fonts/img1_bas.png" style="width: 20%;margin-bottom: 2.5%;">
+        <img src="~/fonts/img2_bas.png" style="width:20%">
+        <img src="~/fonts/img3_bas.png" style="width:20%">
+    </div>
+    <hr>
+    <h2>FUTEBOL AMERICANO</h2>
+    <div class="content_nfl">
+        <img src="~/fonts/img1_nfl.png" style="width: 20%;margin-bottom: 2.5%;">
+        <img src="~/fonts/img2_nfl.jpg" style="width:20%">
+        <img src="~/fonts/img3_nfl.jpg" style="width:20%">
+    </div>
+    <hr>
+    <h2>BEISEBOL</h2>
+    <div class="content_bei">
+        <img src="~/fonts/img1_bei.jpg" style="width: 20%;margin-bottom: 2.5%;">
+        <img src="~/fonts/img2_bei.jpg" style="width:20%">
+        <img src="~/fonts/img3_bei.jpg" style="width:20%">
+    </div>
+</main>
