@@ -14,7 +14,7 @@ namespace AppBancoDLL
         private Banco db;
         public void Insert(Produto produto)
         {
-            string strQuery = string.Format("Insert into tbl_usuario(nm_prod, cat_prod, data_prod)" +
+            string strQuery = string.Format("Insert into tbl_produto(nm_prod, cat_prod, data_prod)" +
                     "values('{0}', '{1}','{2}');", produto.nm_prod, produto.cat_prod, produto.data_prod.ToString("yyyy-MM-dd"));
             using (db = new Banco())
             {
@@ -64,11 +64,6 @@ namespace AppBancoDLL
             return listaProduto(retorno);
         }
 
-        private List<Produto> listaProduto(MySqlDataReader retorno)
-        {
-            throw new NotImplementedException();
-        }
-
         public Produto ListarId(int id)
         {
             using (db = new Banco())
@@ -78,7 +73,7 @@ namespace AppBancoDLL
                 return listaProduto(retorno).FirstOrDefault();
             }
         }
-        private List<Produto> listaProdutp(MySqlDataReader retorno)
+        private List<Produto> listaProduto(MySqlDataReader retorno)
         {
             var produtos = new List<Produto>();
             while (retorno.Read())

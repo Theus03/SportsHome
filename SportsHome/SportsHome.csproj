@@ -189,6 +189,8 @@
     <Content Include="Views\Produto\Index.cshtml" />
     <Content Include="Views\Shared\_SportsHome.cshtml" />
     <Content Include="Views\Produto\Produtos.cshtml" />
+    <Content Include="Views\Produto\Cadastros.cshtml" />
+    <Content Include="Views\Produto\ProdCadastrados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
