@@ -4,57 +4,111 @@
     ViewBag.Title = "Cadastros";
     Layout = "~/Views/Shared/_SportsHome.cshtml";
 }
+<style>
+    :root {
+        --font-label: bold 12pt Leelawadee UI;
+        --font-editor: normal 12pt Leelawadee UI;
+        --font-danger: italic 12pt Leelawadee UI;
+        --font-homeH2: bold 20pt Leelawadee UI;
+    }
 
-<h2>Cadastros</h2>
+    .back {
+        font: bold 9pt Leelawadee UI;
+        color: black
+    }
 
-@using (Html.BeginForm()) 
+    h2 {
+        margin-left: 3%;
+        font: var(--font-homeH2);
+    }
+
+    .form-horizontal {
+        text-align: center;
+    }
+
+    .label2 {
+        display: flex;
+        margin-right: 0.5%;
+        font: var(--font-label);
+    }
+
+    .editor {
+        width:20vw;
+        border: none;
+        border-bottom: solid 3px #FF1616;
+        outline: none;
+        font: var(--font-editor);
+    }
+
+    .editor:hover {
+        background: #E1E8ED;
+    }
+
+    .form-group {
+        margin-top: 3%;
+        margin-left: 35%;
+        display: flex;
+    }
+    .text-danger {
+        font: var(--font-danger);
+    }
+    .btn {
+        background-color: red;
+        width: 15vw;
+        height:5vh;
+        outline: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        color: #fff;
+        border: solid 5px #E1E8ED;
+        margin-bottom:11.5%;
+    }
+</style>
+
+@Html.ActionLink(" - Ver Lista de produtos cadastrados", "ProdCadastrados", "Produto", new { @class = "back" })
+
+<h2>Novo Cadastro</h2>
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+<form>
     <div class="form-horizontal">
-        <h4>Produto</h4>
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.id_prod, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.id_prod, htmlAttributes: new { @class = "label2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.id_prod, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.id_prod, "", new { @class = "text-danger" })  
+                @Html.EditorFor(model => model.id_prod, new { htmlAttributes = new { @class = "editor" } })
+                @Html.ValidationMessageFor(model => model.id_prod, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.nm_prod, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.data_prod, htmlAttributes: new { @class = "label2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.nm_prod, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.data_prod, new { htmlAttributes = new { @class = "editor" } })
+                @Html.ValidationMessageFor(model => model.data_prod, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.cat_prod, htmlAttributes: new { @class = "label2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cat_prod, new { htmlAttributes = new { @class = "editor" } })
+                @Html.ValidationMessageFor(model => model.cat_prod, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.nm_prod, htmlAttributes: new { @class = "label2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nm_prod, new { htmlAttributes = new { @class = "editor" } })
                 @Html.ValidationMessageFor(model => model.nm_prod, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cat_prod, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.cat_prod, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.cat_prod, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.data_prod, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.data_prod, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.data_prod, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Criar" class="btn" />
+                <input type="reset" value="Limpar" class="btn" />
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "ProdCadastrados")
-</div>
+</form>
+}    
