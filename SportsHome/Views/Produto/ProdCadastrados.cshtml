@@ -4,13 +4,59 @@
     ViewBag.Title = "ProdCadastrados";
     Layout = "~/Views/Shared/_SportsHome.cshtml";
 }
+<style>
+    :root {
+        --font-homeH1: bold 35pt Leelawadee UI;
+        --font-homeH2: bold 20pt Leelawadee UI;
+        --font-p: bold 12pt Leelawadee UI;
+        --font-text: normal 12pt Leelawadee UI;
+    }
 
-<h2>ProdCadastrados</h2>
+    .linha_cad {
+        width: 95%;
+        border: solid 5px #ff1616;
+        margin-left: 2%;
+        margin-bottom: 2em;
+        transition: ease 0.5s
+    }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    h2 {
+        margin-left: 2%;
+        font: var(--font-homeH2);
+    }
+
+    .novoProd {
+        margin-left: 2%;
+        font: var(--font-p);
+        color: black;
+    }
+
+    table {
+        width: 80vw;
+        margin: 4.5% 10% 4.5em;
+        color: #000;
+        text-align: center;
+    }
+    tr {
+        font: var(--font-p);
+    }
+
+    td {
+        font: var(--font-text);
+        border-bottom: ridge 2px #E1E8ED;
+        border-right: ridge 2px #e1e8ed;
+    }
+    .mud{
+        font: var(--font-p);
+        color:black;
+    }
+</style>
+
+<h2>Produtos Cadastrados</h2>
+
+<p>@Html.ActionLink(" - Cadastrar novo produto", "Cadastros", "Produto", new { @class = "novoProd" })</p>
 <table class="table">
+    <hr class="linha_cad">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.id_prod)
@@ -24,29 +70,30 @@
         <th>
             @Html.DisplayNameFor(model => model.data_prod)
         </th>
-        <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_prod)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nm_prod)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cat_prod)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.data_prod)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_prod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nm_prod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cat_prod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data_prod)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }, new { @class = "mud" }) |
+                @Html.ActionLink("Detalhes", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "mud" }) |
+                @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ }, new { @class="mud" })
+            </td>
+        </tr>
+    }
 
 </table>
+<hr class="linha_cad">
