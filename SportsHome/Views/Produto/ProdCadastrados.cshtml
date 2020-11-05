@@ -88,7 +88,7 @@
                 @Html.DisplayFor(modelItem => item.data_prod)
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }, new { @class = "mud" }) |
+                @Html.ActionLink("Editar", "Editar", new { id=item.id_prod }, new { @class = "mud" }) |
                 @Html.ActionLink("Detalhes", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "mud" }) |
                 @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ }, new { @class="mud" })
             </td>

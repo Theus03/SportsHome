@@ -28,8 +28,8 @@ namespace SportsHome.Controllers
         {
             if (ModelState.IsValid)
             {
-                var metodoUsuario = new ProdutoDAO();
-                metodoUsuario.Insert(produto);
+                var metodoProduto = new ProdutoDAO();
+                metodoProduto.Insert(produto);
                 return RedirectToAction("Index");
             }
             return View(produto);
@@ -39,6 +39,27 @@ namespace SportsHome.Controllers
             var metodoProduto = new ProdutoDAO();
             var todosProdutos = metodoProduto.Listar();
             return View(todosProdutos);
+        }
+        public ActionResult Editar(int id)
+        {
+            var metodoProduto = new ProdutoDAO();
+            var produto = metodoProduto.ListarId(id);
+            if(produto == null)
+            {
+                return HttpNotFound();
+            }
+            return View(produto);
+        }
+        [HttpPost]
+        public ActionResult Editar(Produto produto)
+        {
+            if (ModelState.IsValid)
+            {
+                var metodoProduto = new ProdutoDAO();
+                metodoProduto.Atualizar(produto);
+                return RedirectToAction("Index");
+            }
+            return View(produto);
         }
     }
 }

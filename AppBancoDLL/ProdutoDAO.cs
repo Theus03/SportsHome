@@ -35,6 +35,7 @@ namespace AppBancoDLL
                 db.ExecutaComando(stratualiza);
             }
         }
+
         public void Excluir(Produto produto)
         {
             var stratualiza = "";
@@ -63,7 +64,6 @@ namespace AppBancoDLL
             var retorno = db.retornaComando(strQuery);
             return listaProduto(retorno);
         }
-
         public Produto ListarId(int id)
         {
             using (db = new Banco())
