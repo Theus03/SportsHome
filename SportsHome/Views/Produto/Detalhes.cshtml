@@ -1,0 +1,97 @@
+﻿@model AppBancoDominio.Produto
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_SportsHome.cshtml";
+}
+<style>
+    :root {
+        --font-label: bold 14pt Leelawadee UI;
+        --font-editor: normal 14pt Leelawadee UI;
+        --font-danger: italic 12pt Leelawadee UI;
+        --font-homeH2: bold 20pt Leelawadee UI;
+        --font-p: bold 12pt Leelawadee UI;
+    }
+    .back {
+        font: var(--font-p);
+        margin-left: 2%;
+        color: black;
+    }
+    .container{
+        margin-bottom: 1%;
+    }
+    .dl-horizontal {
+        display: flex;
+        margin-top: 10%;
+    }
+
+    dt {
+        margin-left: 2%;
+        font: var(--font-label);
+    }
+
+    dd {
+        margin-left: 1%;
+        display: flex;
+        font: var(--font-editor);
+        margin-bottom: 10%;
+    }
+
+    h2 {
+        margin-left: 3%;
+        font: var(--font-homeH2);
+    }
+    .btn {
+        text-decoration: none;
+        font: var(--font-editor);
+        background: red;
+        border: solid 5px #E1E8ED;
+        color: white;
+        padding-left: 80px;
+        padding-right: 80px;
+        margin-left: 40%;
+    }
+</style>
+
+
+@Html.ActionLink(" - Ver Lista de produtos cadastrados", "ProdCadastrados", "Produto", new { @class = "back" })
+<h2>Detalhes</h2>
+
+<div class="container">
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id_prod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.id_prod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nm_prod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nm_prod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_prod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cat_prod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_prod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_prod)
+        </dd>
+
+    </dl>
+    @Html.ActionLink("Editar", "Editar", new { id = Model.id_prod }, new { @class="btn"})
+</div>
+

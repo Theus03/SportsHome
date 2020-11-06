@@ -192,6 +192,8 @@
     <Content Include="Views\Produto\Cadastros.cshtml" />
     <Content Include="Views\Produto\ProdCadastrados.cshtml" />
     <Content Include="Views\Produto\Editar.cshtml" />
+    <Content Include="Views\Produto\Detalhes.cshtml" />
+    <Content Include="Views\Produto\Excluir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

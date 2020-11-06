@@ -30,7 +30,7 @@ namespace SportsHome.Controllers
             {
                 var metodoProduto = new ProdutoDAO();
                 metodoProduto.Insert(produto);
-                return RedirectToAction("Index");
+                return RedirectToAction("ProdCadastrados");
             }
             return View(produto);
         }
@@ -57,9 +57,40 @@ namespace SportsHome.Controllers
             {
                 var metodoProduto = new ProdutoDAO();
                 metodoProduto.Atualizar(produto);
-                return RedirectToAction("Index");
+                return RedirectToAction("ProdCadastrados");
             }
             return View(produto);
+        }
+        public ActionResult Detalhes(int id)
+        {
+            var metodoProduto = new ProdutoDAO();
+            var produto = metodoProduto.ListarId(id);
+
+            if(produto == null)
+            {
+                return HttpNotFound();
+            }
+            return View(produto);
+        }
+        public ActionResult Excluir(int id)
+        {
+            var metodoProduto = new ProdutoDAO();
+            var produto = metodoProduto.ListarId(id);
+
+            if(produto == null)
+            {
+                return HttpNotFound();
+            }
+            return View(produto);
+        }
+        [HttpPost, ActionName("Excluir")]
+        public ActionResult ExcluirConfirma(int id)
+        {
+            var metodoProduto = new ProdutoDAO();
+            Produto produto = new Produto();
+            produto.id_prod = id;
+            metodoProduto.Excluir(produto);
+            return RedirectToAction("ProdCadastrados");
         }
     }
 }
